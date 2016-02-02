@@ -45,7 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DObject.cs" />
     <Compile Include="Graphics\Camera.cs" />
     <Compile Include="Graphics\EBO.cs" />
     <Compile Include="Graphics\Mesh.cs" />

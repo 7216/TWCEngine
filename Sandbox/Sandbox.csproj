@@ -51,12 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Shaders\Poofuck\vert.glsl">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Shaders\Poofuck\frag.glsl">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="Shaders\Mesh\mesh_frag.glsl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
