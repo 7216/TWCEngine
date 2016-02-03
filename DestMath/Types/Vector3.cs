@@ -27,9 +27,56 @@ namespace DestMath.Types
         {
             return (float)Math.Sqrt(x * x + y * y + z * z);
         }
+        public static float Magnitude(Vector3 var)
+        {
+            return (float)Math.Sqrt(var.x * var.x + var.y * var.y + var.z * var.z);
+        }
+        public static float Magnitude(ref Vector3 var)
+        {
+            return (float)Math.Sqrt(var.x * var.x + var.y * var.y + var.z * var.z);
+        }
+
         public float Length()
         {
             return Magnitude();
+        }
+        public static float Length(Vector3 var)
+        {
+            return Magnitude(var);
+        }
+        public static float Length(ref Vector3 var)
+        {
+            return Magnitude(ref var);
+        }
+
+        float Distance(Vector3 other)
+        {
+            return Magnitude(this - other);
+        }
+        float Distance(ref Vector3 other)
+        {
+            return Magnitude(this - other);
+        }
+        static float Distance(Vector3 a, Vector3 b)
+        {
+            return Magnitude(a - b);
+        }
+        static float Distance(ref Vector3 a, ref Vector3 b)
+        {
+            return Magnitude(a - b);
+        }
+
+        static float Dot(Vector3 a, Vector3 b)
+        {
+            return (a.x * b.x) + (a.y * b.y) + (a.z * b.z);
+        }
+        static Vector3 Cross(Vector3 a, Vector3 b)
+        {
+            return new Vector3((a.y * b.z) - (a.z * b.y), (a.z * b.x) - (a.x * b.z), (a.x * b.y) - (a.y * b.x));
+        }
+        static Vector3 TriangleNormal(Vector3 a, Vector3 b, Vector3 c)
+        {
+            return Cross(b - a, c - a);
         }
         #endregion
 

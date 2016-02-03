@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DestMath", "DestMath\DestMath.csproj", "{C9367A25-99B1-4A07-9DEF-152D9E7587F5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{551DC79D-197E-43F2-BF91-B1A51BBD7A15}"
+	ProjectSection(SolutionItems) = preProject
+		LISENCE.txt = LISENCE.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
