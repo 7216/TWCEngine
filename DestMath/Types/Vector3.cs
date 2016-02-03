@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace DestMath.Types
 {
-    class Vector3
+    struct Vector3
     {
-        public float x = 0, y = 0, z = 0;
+        public float x, y, z;
 
         #region Constructors
-        public Vector3()
-        {
-        }
         public Vector3(float x = 0, float y = 0, float z = 0)
         {
             this.x = x;
