@@ -13,9 +13,8 @@ namespace DestMath.Types
         #region Constructors
         public Vector3()
         {
-
         }
-        public Vector3(float x, float y, float z)
+        public Vector3(float x = 0, float y = 0, float z = 0)
         {
             this.x = x;
             this.y = y;
@@ -94,6 +93,16 @@ namespace DestMath.Types
             z /= other.z;
         }
 
+        void Scale(ref Vector3 other)
+        {
+            Multiply(other);
+        }
+        void Scale(float x, float y, float z)
+        {
+            this.x *= x;
+            this.y *= y;
+            this.z *= z;
+        }
         bool Equals(Vector3 other)
         {
             return (x == other.x && y == other.y && z == other.z);
@@ -136,6 +145,23 @@ namespace DestMath.Types
             return new Vector3(a.x / b.x, a.y / b.y, a.z / b.z);
         }
 
+        static Vector3 Multiply(Vector3 a, float b)
+        {
+            return new Vector3(a.x * b, a.y * b, a.z * b);
+        }
+        static Vector3 Multiply(ref Vector3 a, ref float b)
+        {
+            return new Vector3(a.x * b, a.y * b, a.z * b);
+        }
+        static Vector3 Divide(Vector3 a, float b)
+        {
+            return new Vector3(a.x / b, a.y / b, a.z / b);
+        }
+        static Vector3 Divide(ref Vector3 a, ref float b)
+        {
+            return new Vector3(a.x / b, a.y / b, a.z / b);
+        }
+
         static bool Equals(Vector3 a, Vector3 b)
         {
             return a.Equals(b);
@@ -145,6 +171,26 @@ namespace DestMath.Types
             return a.Equals(b);
         }
 
+        void Clamp(Vector3 min, Vector3 max)
+        {
+            x = DestMath.Clamp(x, min.x, max.x);
+            y = DestMath.Clamp(y, min.y, max.y);
+            z = DestMath.Clamp(z, min.z, max.z);
+        }
+        void Clamp(ref Vector3 min, ref Vector3 max)
+        {
+            x = DestMath.Clamp(x, min.x, max.x);
+            y = DestMath.Clamp(y, min.y, max.y);
+            z = DestMath.Clamp(z, min.z, max.z);
+        }
+        static Vector3 Clamp(Vector3 var, Vector3 min, Vector3 max)
+        {
+            return new Vector3(DestMath.Clamp(var.x, min.x, max.x), DestMath.Clamp(var.y, min.y, max.y), DestMath.Clamp(var.z, min.z, max.z));
+        }
+        static Vector3 Clamp(ref Vector3 var, ref Vector3 min, ref Vector3 max)
+        {
+            return new Vector3(DestMath.Clamp(var.x, min.x, max.x), DestMath.Clamp(var.y, min.y, max.y), DestMath.Clamp(var.z, min.z, max.z));
+        }
         #endregion
 
         #region Constants
@@ -169,6 +215,16 @@ namespace DestMath.Types
         {
             return Divide(ref a, ref b);
         }
+
+        public static Vector3 operator *(Vector3 a, float b)
+        {
+            return Multiply(ref a, ref b);
+        }
+        public static Vector3 operator /(Vector3 a, float b)
+        {
+            return Divide(ref a, ref b);
+        }
+
         public static bool operator ==(Vector3 a, Vector3 b)
         {
             return Equals(a, b);
