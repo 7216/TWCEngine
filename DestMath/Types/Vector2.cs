@@ -221,8 +221,8 @@ namespace DestMath.Types
         #endregion
 
         #region Constants
-        static readonly Vector2 Zero = new Vector2(0, 0);
-        static readonly Vector2 One = new Vector2(1, 1);
+        public static readonly Vector2 Zero = new Vector2(0, 0);
+        public static readonly Vector2 One = new Vector2(1, 1);
         #endregion
 
         #region Operators

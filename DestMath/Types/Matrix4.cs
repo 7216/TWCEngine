@@ -58,7 +58,7 @@ namespace DestMath.Types
         #region Values
         static Matrix4 Orthographic(float left, float right, float top, float bottom, float znear, float zfar)
         {
-            Matrix4 matrix = Matrix4.Identity;
+            Matrix4 matrix = Identity;
 
             matrix.elements[0 + 0 * 4] = 2.0f / (right - left);
             matrix.elements[1 + 1 * 4] = 2.0f / (top - bottom);
@@ -77,7 +77,7 @@ namespace DestMath.Types
             float b = (znear + zfar) / (znear - zfar);
             float c = (2.0f * znear * zfar) / (znear - zfar);
 
-            Matrix4 matrix = Matrix4.Identity;
+            Matrix4 matrix = Identity;
             matrix.elements[0 + 0 * 4] = a;
             matrix.elements[1 + 1 * 4] = q;
             matrix.elements[2 + 2 * 4] = b;
@@ -92,7 +92,7 @@ namespace DestMath.Types
         public Matrix4 Translate(Vector3 translation)
 	    {
 
-            Matrix4 matrix = Matrix4.Identity;
+            Matrix4 matrix = Identity;
 
             matrix.elements[0 + 3 * 4] = translation.x;
 		    matrix.elements[1 + 3 * 4] = translation.y;
@@ -109,7 +109,7 @@ namespace DestMath.Types
 
             float oneMinusCosine = 1.0f - cosine;
 
-            Matrix4 matrix = Matrix4.Identity;
+            Matrix4 matrix = Identity;
 
             matrix.elements[0 + 0 * 4] = axis.x* oneMinusCosine + cosine;
 		    matrix.elements[1 + 0 * 4] = axis.y* axis.x * oneMinusCosine + axis.z* sine;
@@ -128,7 +128,7 @@ namespace DestMath.Types
         Matrix4 Scale(Vector3 scale)
 	    {
 
-            Matrix4 matrix = Matrix4.Identity;
+            Matrix4 matrix = Identity;
             matrix.elements[0 + 0 * 4] = scale.x;
 		    matrix.elements[1 + 1 * 4] = scale.y;
 		    matrix.elements[2 + 2 * 4] = scale.z;
@@ -207,7 +207,7 @@ namespace DestMath.Types
         #endregion
 
         #region Constants
-        static readonly Matrix4 Identity = new Matrix4(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        public static readonly Matrix4 Identity = new Matrix4(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
         #endregion
 
         #region Operators

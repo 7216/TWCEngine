@@ -238,8 +238,8 @@ namespace DestMath.Types
         #endregion
 
         #region Constants
-        static readonly Vector3 Zero = new Vector3(0, 0, 0);
-        static readonly Vector3 One = new Vector3(1, 1, 1);
+        public static readonly Vector3 Zero = new Vector3(0, 0, 0);
+        public static readonly Vector3 One = new Vector3(1, 1, 1);
         #endregion
 
         #region Operators
